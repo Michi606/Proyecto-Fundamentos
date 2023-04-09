@@ -1,0 +1,70 @@
+// Aquí podemos montar el código!
+
+// PROYECTO GRUPAL FUNDAMENTOS.cpp : Este archivo contiene la función "main". La ejecución del programa comienza y termina ahí.
+//
+
+#include <iostream> //llamado a la librería
+
+using namespace std; // para no poner a cada rato std::
+
+int main() // función global, o función madre. Es la única función que no esta precedida por otra función
+{
+    int a, b, c, temp; // Definimos las variables, a, bc c y temp (temporal)
+
+        cout << "Ingrese 3 dígitos: "; // interactuamos con el usuario
+        cin >> a >> b >> c; // esto se escribe así, ahí es donde se toman las variables. Es importante recordarlo, porque antes me confundí e hice varios "cin", lo cual es incorrecto
+    
+        // Paso 2. Ordenamiento.
+        // Existen 2 tipos de algoritmos muy útiles. De ordenamiento y de búsqueda.
+        // En este caso, voy a hacer uso del ordenamiento burbuja, pues la lista es pequeña
+
+        // Ordenamiento Burbuja
+
+        if (a > b) {
+
+            temp = a; // almacenará temporalmente el valor de "a" cuando lo intercambiemos con "b".
+            a = b;
+            b = temp;
+
+        }
+
+        if (b > c) {
+
+            temp = b;
+            b = c;
+            c = temp;
+
+            if (a > b) {
+
+                temp = a;
+                a = b;
+                b = temp;
+
+            }
+
+        }
+
+        cout << "Los numeros ordenados son: " << a << "," << b << "," << c << endl; // mostramos los números ordenados, y nos apoyamos de comas para separarlos.
+
+        // Verificamos si los tres números corresponden a las longitudes de un triángulo
+        if (a + b > c && a + c > b && b + c > a) {
+            cout << "Los números corresponden a las longitudes de un triángulo." << endl;
+
+            // Calculamos el tipo de triángulo (equilátero, isósceles o escaleno)
+            if (a == b && b == c) {
+                cout << "El triángulo es equilátero." << endl;
+            }
+            else if (a == b || a == c || b == c) {
+                cout << "El triángulo es isósceles." << endl;
+            }
+            else {
+                cout << "El triángulo es escaleno." << endl;
+            }
+        }
+        else {
+            cout << "Los números no corresponden a las longitudes de un triángulo." << endl;
+        }
+
+
+        return 0; //siempre hay que poner un return 0, buena práctica de programación.
+}
